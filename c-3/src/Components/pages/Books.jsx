@@ -20,7 +20,7 @@ const Books = () => {
   
        let data=await res.json()
       
-  
+   
       setData(data)
      } catch (error) {
        console.log(error)
@@ -43,10 +43,17 @@ const Books = () => {
           /* {!!data && 
           // map thorugh the data and use <BookCard/> component to display each book
           } */
-      
-           data.map((item)=>{
-             <h1>{item.title}</h1>
-           })
+
+          data.map((item)=>{
+            return(
+              <BookCard key={item.id} item={item}/>
+            )
+          })
+          
+          
+          
+          
+          
           }
           
 
