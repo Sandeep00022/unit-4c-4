@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { AuthContext } from "../context/AuthContext";
@@ -7,6 +7,7 @@ import style from "styled-components"
 const NavStyle=styled.div`
 
 display:flex;
+
 justify-content:center;
 
 gap:20px;
@@ -21,6 +22,8 @@ font-weight:800;
 `
 
 export const Navbar = () => {
+
+  
   const { token } = useContext(AuthContext);
   // use token to chnage the text from Login to Logout once logged in successfully
  
@@ -38,7 +41,7 @@ export const Navbar = () => {
           <Link to="books">Books</Link>
         </div>
         <div>
-          <Link to="login">Login</Link>
+        {!token ?<Link to="login">Login</Link>:<Link to="logout">Logout</Link>}
         </div>
         
       </NavStyle>

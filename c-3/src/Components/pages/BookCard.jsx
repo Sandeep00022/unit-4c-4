@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled  from "styled-components";
 export const Flex = styled.div`
-//  add required style
+ margin:auto;
+ 
 `;
 export const BookCard = ({item}) => {
   
   const { id, title, isbn, pageCount, thumbnailUrl } = item;
   return (
     <>
-    <Link to = {`/books/${id}`}>
+    <Link  to = {`/books/${id}`}>
       <Flex >
         <img src={thumbnailUrl} alt={title} height = "200px" width={"200px"} />
         <h3>{title}</h3>
